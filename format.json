@@ -1,0 +1,16 @@
+[
+  {
+    "type": "assign",
+    "name": "hi",
+    "value": {
+      "type": "add",
+    "left" : "5",
+    "right" : {
+      "type": "add",
+      "left": "5",
+      "right": "5"
+    }
+    }
+    }
+  }
+]

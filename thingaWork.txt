@@ -1,0 +1,12 @@
+var = 1
+newline = 2
+equals = 3
+number = 4
+var name = 5
+print = 6
+add = +
+sub = -
+mul = *
+div = /
+lparen = (
+rparen = )

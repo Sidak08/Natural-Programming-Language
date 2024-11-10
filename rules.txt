@@ -1,0 +1,21 @@
+How it works
+take the first line
+define opperation
+recuasivly call on the next part of the line
+
+var Hi = 5 + (7 - 3)
+
+call One
+[
+opp: assisgn
+value : {
+recusive call on 5 + (7 - 3)
+}
+]
+
+call two {
+opperation : add
+value : {5 + recusive call on (7 - 3)}
+}
+
+continue breaking
