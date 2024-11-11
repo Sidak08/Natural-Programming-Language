@@ -3,14 +3,15 @@
     "type": "assign",
     "name": "hi",
     "value": {
-      "type": "add",
-    "left" : "5",
-    "right" : {
-      "type": "add",
+      "type": "binOpp",
+      "opp": "add",
       "left": "5",
-      "right": "5"
-    }
-    }
+      "right": {
+        "type": "binOpp",
+        "opp": "add",
+        "left": "5",
+        "right": "5"
+      }
     }
   }
 ]

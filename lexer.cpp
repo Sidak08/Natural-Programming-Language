@@ -18,7 +18,7 @@ public:
 
     // Overloading the << operator to print Token objects
     friend ostream& operator<<(ostream& os, const Token& token) {
-        os << "Value: " << token.value << " Type: " << token.type;
+        os << "Value: " << token.value << " Type: " << token.type << endl;
         return os;
     }
 };
@@ -51,6 +51,12 @@ unordered_map<string, int> tokenListGenrator() {
     tokenListRef["number"] = 4;
     tokenListRef["varName"] = 5;
     tokenListRef["print"] = 6;
+    tokenListRef["+"] = 7;
+    tokenListRef["-"] = 8;
+    tokenListRef["*"] = 9;
+    tokenListRef["/"] = 10;
+    tokenListRef["("] = 11;
+    tokenListRef[")"] = 12;
     return tokenListRef;
 }
 
@@ -84,6 +90,20 @@ vector<Token> parseFile(const string& file, const unordered_map<string, int>& to
             pointerOne = i + 1;
         }
         else if (file[i] == '\n') {
+            string word = file.substr(pointerOne, i - pointerOne);
+            if (word != " ") {
+                auto it = tokenListRef.find(word);
+                if (it != tokenListRef.end()) {
+                    Token tokenGen(word, it->second);
+                    tokenList.push_back(tokenGen);
+                } else if (checkIfNum(word)) {
+                    Token tokenGen(word, 4);
+                    tokenList.push_back(tokenGen);
+                } else {
+                    Token tokenGen(word, 5);
+                    tokenList.push_back(tokenGen);
+                }
+            }
             pointerOne = i + 1;
             Token tokenGen("NewLine", 2);
             tokenList.push_back(tokenGen);
