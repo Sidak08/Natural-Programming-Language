@@ -30,3 +30,18 @@ opperation : add
 }
 }
 ]
+
+design recusrive function
+
+input
+Value: var Type: 1
+Value: hello Type: 5
+Value: = Type: 3
+Value: 5 Type: 4
+Value: + Type: 7
+Value: ( Type: 11
+Value: 7 Type: 4
+Value: - Type: 8
+Value: 3 Type: 4
+Value: ) Type: 12
+Value: NewLine Type: 2
